@@ -16,4 +16,5 @@ runs:
       shell: sh
       run: |
         curl -s  https://catfact.ninja/fact |jq .fact
+        echo "foo"
         

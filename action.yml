@@ -16,7 +16,7 @@ runs:
       name: create simple output
       uses: docker://finalspy/busybox-curl-jq
       shell: sh
-       run: |
+      run: |
          res=`curl -ks  https://catfact.ninja/fact |jq .fact`
          echo $res
          echo "we took a a param called ename which had a value of  ${{ inputs.ename }}"

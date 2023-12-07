@@ -1,8 +1,8 @@
 ---
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: action
-name: test action
-description: test if a simple action will work 
+name: get a fact action 
+description: gets a fact from catfact and displayes the fact via curl and jq
 inputs:
   ename:
     description: name for this single param
@@ -10,9 +10,10 @@ inputs:
 runs:
   using: composite
   steps:
-    - id: createE
+    - id: getAFact
       name: Create simple output
-      uses: docker://gururepservice/golang:saasbuildlatest
+      uses: docker://finalspy/busybox-curl-jq
       shell: sh
       run: |
-        echo "hello world"
+        curl -s  https://catfact.ninja/fact |jq .fact
+        

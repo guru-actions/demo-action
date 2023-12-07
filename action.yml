@@ -1,4 +1,4 @@
----
+=---
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: action
 name: get a fact action 
@@ -15,6 +15,6 @@ runs:
       uses: docker://finalspy/busybox-curl-jq
       shell: sh
       run: |
-        curl -s  https://catfact.ninja/fact |jq .fact
-        echo "foo"
+        res=$(curl -s  https://catfact.ninja/fact |jq .fact)
+        echo "$res"
         

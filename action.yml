@@ -7,10 +7,11 @@ inputs:
   ename:
     description: name for this single param
     required: false
+
+outputs:
+    output1: ${{ steps.get-a-fact.outputs.fact }}
 runs:
   using: composite
-  outputs:
-    output1: ${{ steps.get-a-fact.outputs.fact }}
   steps:
     - id: get-a-fact
       name: create simple output

@@ -17,4 +17,5 @@ runs:
       run: |
         res=`curl -ks  https://catfact.ninja/fact |jq .fact`
         echo $res
+        echo "we took a a param called ename whihc had a value of  ${{ inputs.ename }}"
         

@@ -10,8 +10,8 @@ inputs:
 runs:
   using: composite
   steps:
-    - id: getAFact
-      name: Create simple output
+    - id: get-a-fact
+      name: create simple output
       uses: docker://finalspy/busybox-curl-jq
       shell: sh
       run: |

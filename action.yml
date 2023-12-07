@@ -9,7 +9,7 @@ inputs:
     required: false
 
 outputs:
-    output1: ${{ steps.get-a-fact.outputs.fact }}
+    output1: "foo"
 runs:
   using: composite
   steps:

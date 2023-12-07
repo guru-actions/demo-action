@@ -1,0 +1,18 @@
+---
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: action
+name: test action
+description: test if a simple action will work 
+inputs:
+  ename:
+    description: name for this single param
+    required: true
+runs:
+  using: composite
+  steps:
+    - id: createE
+      name: Create simple output
+      uses: docker://gururepservice/golang:saasbuildlatest
+      shell: sh
+      run: |
+        echo "hello world"

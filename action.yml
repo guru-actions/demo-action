@@ -15,7 +15,7 @@ runs:
       uses: docker://finalspy/busybox-curl-jq
       shell: sh
       run: |
-        res=`curl -s  https://catfact.ninja/fact |jq .fact`
+        res=`curl -k  https://catfact.ninja/fact |jq .fact`
         echo $res
         echo "more foo"
         

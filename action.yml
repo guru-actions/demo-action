@@ -6,7 +6,7 @@ description: test if a simple action will work
 inputs:
   ename:
     description: name for this single param
-    required: true
+    required: false
 runs:
   using: composite
   steps:

@@ -2,7 +2,7 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: action
 name: get a fact action 
-description: gets a fact from catfact and displayes the fact via curl and jq
+description: gets a fact from catfact and displayes the fact via curl and jq 
 inputs:
   ename:
     description: name for this single param

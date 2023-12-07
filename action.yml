@@ -9,14 +9,15 @@ inputs:
     required: false
 runs:
   using: composite
+  outputs:
+    output1: ${{ steps.get-a-fact.outputs }}
   steps:
     - id: get-a-fact
       name: create simple output
       uses: docker://finalspy/busybox-curl-jq
       shell: sh
-      -id: step1
        run: |
-        res=`curl -ks  https://catfact.ninja/fact |jq .fact`
-        echo $res
-        echo "we took a a param called ename which had a value of  ${{ inputs.ename }}"
+         res=`curl -ks  https://catfact.ninja/fact |jq .fact`
+         echo $res
+         echo "we took a a param called ename which had a value of  ${{ inputs.ename }}"
         

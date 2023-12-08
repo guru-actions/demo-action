@@ -23,5 +23,6 @@ runs:
          echo "$res" 
          echo "we took a a param called ename which had a value of  ${{ inputs.ename }}"
     - id: foofact
-      run: echo "myfoofact=echo this is my outout" >> $GITHUB_OUTPUT
+      run: echo "myfoofact=this is my outout" >> $GITHUB_OUTPUT
+      uses: docker://finalspy/busybox-curl-jq
       shell: bash

@@ -23,6 +23,6 @@ runs:
          echo "$res" 
          echo "we took a a param called ename which had a value of  ${{ inputs.ename }}"
     - id: foofact
-      run: echo "myfoofact=this is my outout" >> $CLOUDBEES_OUTPUT
+      run: echo "this is my outout" >> $CLOUDBEES_OUTPUT/myfoofact"
       uses: docker://finalspy/busybox-curl-jq
       shell: sh

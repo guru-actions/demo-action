@@ -7,8 +7,10 @@ inputs:
   ename:
     description: name for this single param
     required: false
-
-
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.foofact.outputs.foofact.myfoofact }}
 runs:
   using: composite
   steps:
@@ -20,4 +22,5 @@ runs:
          res=`curl -ks  https://catfact.ninja/fact |jq .fact`
          echo "$res" 
          echo "we took a a param called ename which had a value of  ${{ inputs.ename }}"
-        
+    - id: foofact
+      run: echo "myfoofact=echo this is my outout" >> $GITHUB_OUTPUT

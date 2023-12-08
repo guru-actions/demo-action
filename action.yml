@@ -25,4 +25,4 @@ runs:
     - id: foofact
       run: echo "myfoofact=this is my outout" >> $GITHUB_OUTPUT
       uses: docker://finalspy/busybox-curl-jq
-      shell: bash
+      shell: sh
